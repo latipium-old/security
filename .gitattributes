@@ -1,0 +1,16 @@
+# .gitattributes
+#
+# Copyright (c) 2016 Zach Deibert.
+# All Rights Reserved.
+[attr]src text eol=lf whitespace=blank-at-eol,space-before-tab,tab-in-indent,trailing-space,indent-with-non-tab,tabwidth=4
+
+.gitattributes src
+.gitignore src
+*.config src diff=html
+*.cs src diff=csharp
+*.csproj src diff=html
+*.xml src diff=html
+*.html src diff=html
+*.css src
+*.js src
+*.json src

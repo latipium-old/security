@@ -1,0 +1,7 @@
+# .gitattributes
+#
+# Copyright (c) 2016 Zach Deibert.
+# All Rights Reserved.
+*~
+/bin/
+/obj/
