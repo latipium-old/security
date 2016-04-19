@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2016 Zach Deibert.
 # All Rights Reserved.
-[attr]src text eol=lf whitespace=blank-at-eol,space-before-tab,tab-in-indent,trailing-space,indent-with-non-tab,tabwidth=4
+[attr]src text eol=lf whitespace=blank-at-eol,space-before-tab,trailing-space,indent-with-non-tab,tabwidth=4
 
 .gitattributes src
 .gitignore src
