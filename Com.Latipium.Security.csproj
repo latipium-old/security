@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="AssemblyVersion.cs" />
+    <Compile Include="Com\Latipium\Security\LatipiumSecurity.cs" />
+    <Compile Include="Com\Latipium\Security\StartObject.cs" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
