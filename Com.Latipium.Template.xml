@@ -46,6 +46,12 @@
         <OutputType>Library</OutputType>
     </PropertyGroup>
     
+    <!-- Properties dependent on signing -->
+    <PropertyGroup Condition="'$(LatipiumSigned)' == 'true'">
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    
     <!-- Custom targets -->
     <UsingTask TaskName="commandwrapper.CommandTask" AssemblyFile="$(SolutionDir)/packages/CommandWrapper.1.6/bin/command-wrapper.exe" />
     <Target Name="CalculateVersion" BeforeTargets="CoreCompile">
