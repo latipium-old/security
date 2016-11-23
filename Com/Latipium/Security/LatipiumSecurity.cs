@@ -33,7 +33,7 @@ namespace Com.Latipium.Security {
 			return GetStrongName(Assembly.LoadFile(Path.GetFullPath(file)));
 		}
 
-		private static string FindModule(string name, string framework = "net35") {
+		private static string FindModule(string name, string framework = "net45") {
 			if ( File.Exists(string.Concat(name, ".dll")) ) {
 				return string.Concat(name, ".dll");
 			} else {
@@ -67,7 +67,7 @@ namespace Com.Latipium.Security {
 
 		private static void GetPermissions(PermissionSet permissions) {
 			string core = Path.GetFullPath(FindModule("Com.Latipium.Core"));
-			string log = Path.GetFullPath(FindModule("log4net", "net35-full"));
+			string log = Path.GetFullPath(FindModule("log4net", "net45-full"));
 			permissions.AddPermission(new SecurityPermission(SecurityPermissionFlag.Execution));
 			permissions.AddPermission(new FileIOPermission(FileIOPermissionAccess.Read | FileIOPermissionAccess.PathDiscovery, new string[] {
 				core,
