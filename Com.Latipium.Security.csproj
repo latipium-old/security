@@ -43,11 +43,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Com.Latipium.Core">
-      <HintPath>$(SolutionDir)\packages\Com.Latipium.Core.0.0.16.3\lib\net45\Com.Latipium.Core.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>$(SolutionDir)\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Com.Latipium.Core">
+      <HintPath>$(SolutionDir)\packages\Com.Latipium.Core.1.0.0.17\lib\net45\Com.Latipium.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
