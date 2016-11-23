@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{78523371-9E06-4734-B1FA-B66FC4576EE6}</ProjectGuid>
-    <RootNamespace>Com.Latipium.Template</RootNamespace>
+    <ProjectGuid>{3818B89F-100D-497E-AAF2-25534D7EA6D7}</ProjectGuid>
+    <RootNamespace>Com.Latipium.Security</RootNamespace>
     <CustomCommands>
       <CustomCommands>
         <Command type="Custom" name="Authorize CI" command="$(SolutionDir)/packages/CommandWrapper.1.6/bin/command-wrapper.exe MONO_PATH=$(SolutionDir)/packages/CommandLineParser.1.9.71/lib/net45/:$(SolutionDir)/packages/GitSharp.0.3/lib/:$(SolutionDir)/packages/log4net.2.0.5/lib/net45-full/:$(SolutionDir)/packages/Microsoft.Web.Xdt.2.1.1/lib/net40/:$(SolutionDir)/packages/Newtonsoft.Json.9.0.1/lib/net45/:$(SolutionDir)/packages/NuGet.Core.2.12.0/lib/net40-Client/:$(SolutionDir)/packages/SharpZipLib.0.86.0/lib/20/:$(SolutionDir)/packages/Tamir.SharpSSH.1.1.1.13/lib/:$(SolutionDir)/packages/Winterdom.IO.FileMap.2.0.2.0/lib/:$(SolutionDir)/packages/BouncyCastle.1.8.1/lib/:$(SolutionDir)/packages/YamlDotNet.4.0.0/lib/net35/ PATH=$(SolutionDir)/packages/CommandLineParser.1.9.71/lib/net45/;$(SolutionDir)/packages/GitSharp.0.3/lib/;$(SolutionDir)/packages/log4net.2.0.5/lib/net45-full/;$(SolutionDir)/packages/Microsoft.Web.Xdt.2.1.1/lib/net40/;$(SolutionDir)/packages/Newtonsoft.Json.9.0.1/lib/net45/;$(SolutionDir)/packages/NuGet.Core.2.12.0/lib/net40-Client/;$(SolutionDir)/packages/SharpZipLib.0.86.0/lib/20/;$(SolutionDir)/packages/Tamir.SharpSSH.1.1.1.13/lib/;$(SolutionDir)/packages/Winterdom.IO.FileMap.2.0.2.0/lib/;$(SolutionDir)/packages/BouncyCastle.1.8.1/lib/;$(SolutionDir)/packages/YamlDotNet.4.0.0/lib/net35/ WRAPPER_ASK=3 -- $(SolutionDir)/packages/Com.Latipium.DevTools.1.2.2.2/bin/Com.Latipium.DevTools.exe authorize -C $(ProjectDir) Please__enter__your__NuGet.org__API__key:" workingdir="$(SolutionDir)/packages/Com.Latipium.DevTools.1.2.2.2/" />
@@ -12,7 +12,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Exe</OutputType>
-    <AssemblyName>Com.Latipium.Template</AssemblyName>
+    <AssemblyName>Com.Latipium.Security</AssemblyName>
     <ReleaseVersion>1.0</ReleaseVersion>
   </PropertyGroup>
   <Import Project="Com.Latipium.Template.xml" />
