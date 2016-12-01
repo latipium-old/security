@@ -39,7 +39,7 @@ namespace Com.Latipium.Security {
 			} else {
 				Version latest = null;
 				foreach ( string dir in Directory.GetDirectories(Environment.CurrentDirectory, string.Concat(name, ".*")) ) {
-					Version ver = new Version(dir.Substring(name.Length + 1));
+					Version ver = new Version(Path.GetFileName(dir).Substring(name.Length + 1));
 					if ( (latest == null || latest < ver) && File.Exists(Path.Combine(Path.Combine(Path.Combine(string.Concat(name, ".", ver.ToString()), "lib"), framework), string.Concat(name, ".dll"))) ) {
 						latest = ver;
 					}
@@ -106,10 +106,10 @@ namespace Com.Latipium.Security {
 			}
 		}
 
-		private static void LoadCachedDll(string mod, string pubKey) {
+		private static void LoadCachedDll(string mod, string pubKey, string framework = "net45") {
 			// Load the dll completely from memory so it can still be opened
 			// inside the sandbox
-			string path = Path.GetFullPath(FindModule(mod));
+			string path = Path.GetFullPath(FindModule(mod, framework));
 			Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
 			byte[] buffer = new byte[stream.Length];
 			stream.Read(buffer, 0, buffer.Length);
@@ -135,7 +135,7 @@ namespace Com.Latipium.Security {
 		public static void Initialize(string startMod, string customIO) {
 			Console.InputEncoding = Console.OutputEncoding = Encoding.UTF8;
 			LoadCachedDll("Com.Latipium.Core", "8532f4db378e684e");
-			LoadCachedDll("log4net", "669e0ddf0bb1aa2a");
+			LoadCachedDll("log4net", "669e0ddf0bb1aa2a", "net45-full");
 			Sandbox(startMod, customIO);
 		}
 	}
