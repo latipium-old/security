@@ -49,6 +49,7 @@
     <Reference Include="Com.Latipium.Core">
       <HintPath>$(SolutionDir)\packages\Com.Latipium.Core.1.0.0.17\lib\net45\Com.Latipium.Core.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -65,5 +66,8 @@
   </ProjectExtensions>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="log.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -75,7 +75,7 @@ namespace Com.Latipium.Security {
 			}));
 		}
 
-		private static void Sandbox(string startMod, string customIO) {
+        private static void Sandbox(string startMod, string customIO, string logConfig) {
 			Evidence evidence = new Evidence();
 			AppDomainSetup setup = new AppDomainSetup();
 			setup.ApplicationBase = Environment.CurrentDirectory;
@@ -88,7 +88,8 @@ namespace Com.Latipium.Security {
 				fullTrust.ToArray());
 			MethodInfo method = typeof(StartObject).GetMethod("Launch", new Type[] {
 				typeof(string),
-				typeof(string)
+				typeof(string),
+                typeof(string)
 			});
 			ObjectHandle handle = Activator.CreateInstanceFrom(domain, typeof(StartObject).Assembly
 				.CodeBase,
@@ -97,7 +98,8 @@ namespace Com.Latipium.Security {
 				method.Invoke(
 					handle.Unwrap(), new object[] {
 						startMod,
-						customIO
+						customIO,
+                        logConfig
 					});
 			} catch ( TargetInvocationException ex ) {
 				new PermissionSet(PermissionState.Unrestricted).Assert();
@@ -134,9 +136,9 @@ namespace Com.Latipium.Security {
 		/// <param name="customIO">The path to the custom I/O module, or <c>null</c> to use the default I/O module.</param>
 		public static void Initialize(string startMod, string customIO) {
 			Console.InputEncoding = Console.OutputEncoding = Encoding.UTF8;
-			LoadCachedDll("Com.Latipium.Core", "8532f4db378e684e");
-			LoadCachedDll("log4net", "669e0ddf0bb1aa2a", "net45-full");
-			Sandbox(startMod, customIO);
+            LoadCachedDll("log4net", "669e0ddf0bb1aa2a", "net45-full");
+            LoadCachedDll("Com.Latipium.Core", "8532f4db378e684e");
+            Sandbox(startMod, customIO, Path.Combine(Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().EscapedCodeBase).AbsolutePath), "log.xml"));
 		}
 	}
 }
