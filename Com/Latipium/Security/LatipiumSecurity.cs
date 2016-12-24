@@ -132,7 +132,7 @@ namespace Com.Latipium.Security {
         private static string GetLogPath() {
             string path = Path.GetFullPath("log.xml");
             while (path != null && !File.Exists(path)) {
-                path = Path.GetDirectoryName(path);
+                path = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(path)), "log.xml");
             }
             return path;
         }
