@@ -25,5 +25,6 @@
   </metadata>
   <files>
     <file src="bin/{{ configuration }}/Com.Latipium.Security.dll" target="lib/net45" />
+    <file src="bin/{{ configuration }}/log.xml" />
   </files>
 </package>

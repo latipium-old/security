@@ -129,6 +129,14 @@ namespace Com.Latipium.Security {
 			}
 		}
 
+        private static string GetLogPath() {
+            string path = Path.GetFullPath("log.xml");
+            while (path != null && !File.Exists(path)) {
+                path = Path.GetDirectoryName(path);
+            }
+            return path;
+        }
+
 		/// <summary>
 		/// Initializes the security sandbox.
 		/// </summary>
@@ -138,7 +146,7 @@ namespace Com.Latipium.Security {
 			Console.InputEncoding = Console.OutputEncoding = Encoding.UTF8;
             LoadCachedDll("log4net", "669e0ddf0bb1aa2a", "net45-full");
             LoadCachedDll("Com.Latipium.Core", "8532f4db378e684e");
-            Sandbox(startMod, customIO, Path.Combine(Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().EscapedCodeBase).AbsolutePath), "log.xml"));
+            Sandbox(startMod, customIO, GetLogPath());
 		}
 	}
 }
